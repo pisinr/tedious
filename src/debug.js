@@ -1,5 +1,5 @@
 const EventEmitter = require('events').EventEmitter;
-const util = require('util');
+var inspect = require('util-inspect');
 
 module.exports = class Debug extends EventEmitter {
   /*
@@ -41,7 +41,7 @@ module.exports = class Debug extends EventEmitter {
 
   token(token) {
     if (this.haveListeners() && this.options.token) {
-      this.log(util.inspect(token, false, 5, true));
+      this.log(inspect(token, false, 5, true));
     }
   }
 

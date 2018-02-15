@@ -1,4 +1,4 @@
-const util = require('util');
+const inherits = require('util.inherits')
 
 module.exports.ConnectionError = ConnectionError;
 function ConnectionError(message, code) {
@@ -18,7 +18,7 @@ function ConnectionError(message, code) {
   Error.captureStackTrace(this, this.constructor);
 }
 
-util.inherits(ConnectionError, Error);
+inherits(ConnectionError, Error);
 
 ConnectionError.prototype.name = 'ConnectionError';
 
@@ -40,6 +40,6 @@ function RequestError(message, code) {
   Error.captureStackTrace(this, this.constructor);
 }
 
-util.inherits(RequestError, Error);
+inherits(RequestError, Error);
 
 RequestError.prototype.name = 'RequestError';
